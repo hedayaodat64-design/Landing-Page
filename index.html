@@ -3,30 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوصلة هداية - Reels Page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>بوصلة هداية - المحاسب الذكي</title>
+    <style>
+        /* الإعدادات والألوان */
+        :root {
+            --deep-blue: #0E2F76;
+            --dark-bg: #0A1931;
+            --gold-gradient: linear-gradient(135deg, #E5BE72 0%, #AD8C50 100%);
+            --white-text: #F5FEFF;
+            --accent-blue: #AAC0E1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--white-text);
+            overflow: hidden; /* لمنع ظهور أشرطة التمرير */
+        }
+
+        /* حاوية الريلز (أبعاد الجوال 9:16) */
+        .reels-card {
+            width: 360px; /* العرض */
+            height: 740px; /* الارتفاع ليتناسب مع المحتوى */
+            max-height: 95vh;
+            background: radial-gradient(circle at center, var(--deep-blue), var(--dark-bg));
+            border: 1px solid rgba(170, 192, 225, 0.2);
+            border-radius: 30px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            position: relative;
+        }
+
+        .intro-text {
+            font-size: 0.95rem;
+            font-style: italic;
+            opacity: 0.9;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            color: var(--white-text);
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: var(--gold-gradient);
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            font-size: 2rem;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .sub-title {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        /* شبكة المميزات */
+        .features-grid {
+            width: 100%;
+            display: grid;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            border-right: 4px solid #E5BE72;
+            display: flex;
+            align-items: center;
+            text-align: right;
+            line-height: 1.4;
+        }
+
+        .feature span {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* الزر الذهبي */
+        .gold-btn {
+            background: var(--gold-gradient);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            color: #0A1931;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(229, 190, 114, 0.3);
+            transition: all 0.3s ease;
+            margin-top: auto; /* يدفع الزر للأسفل */
+        }
+
+        .gold-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(229, 190, 114, 0.5);
+        }
+
+        /* جعل النص متجاوب مع الشاشات الصغيرة جداً */
+        @media (max-height: 700px) {
+            .reels-card { height: 98vh; padding: 20px 15px; }
+            .main-title { font-size: 1.8rem; }
+            .intro-text { font-size: 0.85rem; }
+        }
+    </style>
 </head>
 <body>
+
     <div class="reels-card">
-        <p class="intro-text">" انت ك"صاحب مشروع"
+        <p class="intro-text">
+            "انت ك"صاحب مشروع"
  بتعطي كل جهدك لمشروعك، بس هل سألت حالك قبل هيك: "وين عم تروح الأرباح بالظبط؟" أو "هل ميزانيتي اليوم متوازنة؟"
-لأن الأرقام هي لغة البزنس، صممنا لك "بوصلة هداية" 🧭.. 
           
-          الأداة الرقمية اللي رح تخليك المحاسب الذكي لمشروعك بدون تعقيد:"</p>
+لأن الأرقام هي لغة البزنس، صممنا لك "بوصلة هداية" 🧭.. الأداة الرقمية اللي رح تخليك المحاسب الذكي لمشروعك بدون تعقيد:
+        </p>
         
         <div class="divider"></div>
 
         <h1 class="main-title">بوصلة هداية 🧭</h1>
-        <p class="sub-title">أداتك للوعي المالي الذكي</p>
+        <p class="sub-title">للوعي المالي والنمو الحقيقي</p>
 
         <div class="features-grid">
-            <div class="feature"><span>✨</span> ووضوح تام: بتعرف إجمالي إيراداتك ونفقاتك بلمحة</div>
-            <div class="feature"><span>⚖️</span>  ميزانية ذكية: أصولك، التزاماتك، وحقوق ملكيتك بتتحدث وتتوازن تلقائياً. </div>
-            <div class="feature"><span>📈</span>  تحليل ربحية: بتعرف صافي ربحك وهامش الربح الحقيقي لكل حركة. </div>
-            <div class="feature"><span>📂</span> مرونة مطلقة: واجهة رقمية سهلة + ملف إكسيل احترافي داخلي.</div>
+            <div class="feature"><span>✨</span> <b>وضوح تام:</b> بتعرف إجمالي إيراداتك ونفقاتك بلمحة.</div>
+            <div class="feature"><span>⚖️</span> <b> ميزانية ذكية :</b> أصولك والتزاماتك تتوازن تلقائيًا.</div>
+            <div class="feature"><span>📈</span> <b>تحليل ربحية:</b> بتعرف صافي ربحك وهامش الربح الحقيقي لكل حركة.</div>
+            <div class="feature"><span>📂</span> <b>مرونة مطلقة:</b> واجهة رقمية سهلة + ملف إكسيل احترافي داخلي.</div>
         </div>
 
-        <button class="gold-btn">احصل على بوصلتك الآن</button>
+        <button class="gold-btn"> اطلب نسختك الآن</button>
     </div>
+
 </body>
 </html>
